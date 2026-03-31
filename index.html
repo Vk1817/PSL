@@ -97,26 +97,6 @@ body {
     height: 100%;
     border-radius: 50%;
 }
-
-/* WhatsApp button */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 85px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-.whatsapp-btn img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
 </style>
 
 </head>
@@ -128,7 +108,6 @@ body {
 <div class="player-wrapper">
 
     <div class="my-iframe">
-        <!-- Willow iframe -->
         <iframe src="https://willow-crickcast.pages.dev/"
         allowfullscreen
         allow="autoplay; encrypted-media"></iframe>
@@ -145,17 +124,12 @@ body {
 
 <div class="live-box">● LIVE</div>
 
-<!-- 🔥 Offstump Banner -->
+<!-- 🔥 Banner (NOW OPENS WHATSAPP) -->
 <div class="banner">
-    <a href="https://offstump.com" target="_blank">
+    <a href="https://wa.me/447955881183" target="_blank">
         <img src="https://github.com/Vk1817/IPL1/blob/main/offstumphd.jpg?raw=true">
     </a>
 </div>
-
-<!-- 🔥 WhatsApp Button -->
-<a href="https://wa.me/447955881183" target="_blank" class="whatsapp-btn">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
 
 <!-- 🔥 Telegram Button -->
 <a href="https://t.me/vaathala1" target="_blank" class="telegram-btn">
@@ -163,7 +137,7 @@ body {
 </a>
 
 <script>
-// First click → offstump only
+// First click → offstump
 let firstClickDone = false;
 
 document.getElementById("adOverlay").addEventListener("click", () => {
