@@ -21,8 +21,9 @@ body {
     color: white;
 }
 
+/* HEADER */
 .header {
-    padding: 16px;
+    padding: 18px;
     text-align: center;
     font-weight: 700;
     font-size: 22px;
@@ -31,15 +32,19 @@ body {
     box-shadow: 0 4px 20px rgba(16,185,129,0.4);
 }
 
+/* CONTAINER */
 .container {
-    padding: 10px;
+    padding: 12px;
+    max-width: 500px;
+    margin: auto;
 }
 
+/* PLAYER */
 .player-box {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(16,185,129,0.3);
+    box-shadow: 0 0 25px rgba(16,185,129,0.3);
 }
 
 .player-box iframe {
@@ -48,12 +53,7 @@ body {
     border: none;
 }
 
-.click-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-}
-
+/* LIVE BADGE */
 .live-badge {
     position: absolute;
     top: 10px;
@@ -66,8 +66,9 @@ body {
     font-weight: bold;
 }
 
+/* CHANNEL SELECT */
 .channel-bar {
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 12px;
     border-radius: 14px;
     background: linear-gradient(135deg, #064e3b, #022c22);
@@ -83,8 +84,9 @@ select {
     font-size: 15px;
 }
 
+/* CARD */
 .card {
-    margin-top: 12px;
+    margin-top: 14px;
     padding: 16px;
     border-radius: 16px;
     background: rgba(255,255,255,0.06);
@@ -101,6 +103,7 @@ select {
     opacity: 0.85;
 }
 
+/* SOCIAL */
 .social-row {
     display: flex;
     gap: 10px;
@@ -118,6 +121,11 @@ select {
     text-decoration: none;
     color: white;
     font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 .btn img {
@@ -132,17 +140,9 @@ select {
     background: linear-gradient(135deg, #f09433, #dc2743);
 }
 
-.banner {
-    margin-top: 12px;
-}
-
-.banner img {
-    width: 100%;
-    border-radius: 14px;
-}
-
+/* FOOTER SPACE */
 .footer-space {
-    height: 10px;
+    height: 20px;
 }
 </style>
 
@@ -154,27 +154,25 @@ select {
 
 <div class="container">
 
+    <!-- PLAYER -->
     <div class="player-box">
         <div class="live-badge">LIVE</div>
 
-        <!-- FIRST CLICK AD -->
-        <div class="click-overlay" id="overlay" onclick="handleAdClick()"></div>
-
-        <!-- DEFAULT BEST STREAM -->
         <iframe id="player" 
         src="https://w-buzz.pages.dev/" 
         allow="autoplay; encrypted-media" 
         allowfullscreen></iframe>
     </div>
 
+    <!-- CHANNEL SELECT -->
     <div class="channel-bar">
         <select onchange="changeChannel(this.value)">
-              <option value="https://w-buzz.pages.dev/">Willow HD (Windows)</option>
+            <option value="https://w-buzz.pages.dev/">Willow HD (Windows)</option>
             <option value="https://psl-ios.pages.dev/">PSL iOS Stream (Best)</option>
-          
         </select>
     </div>
 
+    <!-- SOCIAL CARD -->
     <div class="card">
         <h3>🚀 Stay Connected with CrickCast</h3>
         <p>
@@ -194,12 +192,6 @@ select {
         </div>
     </div>
 
-    <div class="banner">
-        <a href="https://wa.me/447955881183" target="_blank">
-            <img src="https://github.com/Vk1817/IPL1/blob/main/offstumphd.jpg?raw=true">
-        </a>
-    </div>
-
     <div class="footer-space"></div>
 
 </div>
@@ -207,12 +199,6 @@ select {
 <script>
 function changeChannel(url) {
     document.getElementById("player").src = url;
-    document.getElementById("overlay").style.display = "block";
-}
-
-function handleAdClick() {
-    window.open("https://offstump.com", "_blank");
-    document.getElementById("overlay").style.display = "none";
 }
 </script>
 
